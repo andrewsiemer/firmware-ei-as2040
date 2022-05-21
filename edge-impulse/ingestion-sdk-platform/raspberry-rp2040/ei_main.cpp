@@ -30,10 +30,8 @@
 #include "ei_classifier_porting.h"
 #include "ei_run_impulse.h"
 
-#include "ei_dht11sensor.h"
 #include "ei_inertialsensor.h"
 #include "ei_analogsensor.h"
-#include "ei_ultrasonicsensor.h"
 
 EiDeviceInfo *EiDevInfo = dynamic_cast<EiDeviceInfo *>(&EiDevice);
 static ATServer *at;
@@ -50,16 +48,6 @@ void ei_init(void)
     /* Setup the inertial sensor */
     if (ei_inertial_sensor_init() == false) {
         ei_printf("Inertial sensor communication error occurred\r\n");
-    }
-
-    /* Setup the temp&humidity sensor */
-    if (ei_dht11_sensor_init() == false) {
-        ei_printf("DHT11 initialization failed\r\n");
-    }
-
-    /* Setup the ultrasonic sensor */
-    if (ei_ultrasonic_sensor_init() == false) {
-        ei_printf("Ultrasonic ranger initialization failed\r\n");
     }
 
     /* Setup the light sensor */

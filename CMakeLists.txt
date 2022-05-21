@@ -80,10 +80,8 @@ target_include_directories(ei_rp2040_firmware PRIVATE
     edge-impulse/QCBOR/src
     firmware-sdk
     firmware-sdk/at-server
-    ThirdParty/Seeed_Arduino_UltrasonicRanger
     ThirdParty/Wire/src
-    ThirdParty/Arduino_LSM6DSOX/src  
-    ThirdParty/rp2040_DHT11_lib       
+    ThirdParty/Arduino_LSM6DSOX/src    
 )
 
 include_directories(${INCLUDES})

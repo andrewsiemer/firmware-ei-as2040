@@ -31,5 +31,8 @@
 *.out
 *.app
 
+# Mac specific
 .DS_Store
+
+# Build files
 build/
