@@ -49,7 +49,7 @@ cmake .. -DDEFINE_DEBUG=ON
 make -j4
 ```
 
-To flash the firmware file (`.uf2`) onto the AS2040 board, connect the device to your computer using a USB-C cable. Next, while holding down the `BOOT` button, press and release the `RUN` button. You should see the device show up as a USB Mass Storage Device named `RPI-RP2`. Drag the `ei_rp2040_firmware.uf2` file from `/build` folder to newly appeared USB Mass Storage Device. After a few seconds the file should be copied to the device and it will then disappear. The device is now ready to go!
+To flash the firmware file (`.uf2`) onto the AS2040 board, connect the device to your computer using a USB-C cable. Next, while holding down the `BOOT` button, press and release the `RUN` button. You should see the device show up as a USB Mass Storage Device named `RPI-RP2`. Drag the `ei_as2040_firmware.uf2` file from `/build` folder to newly appeared USB Mass Storage Device. After a few seconds the file should be copied to the device and it will then disappear. The device is now ready to go!
 
 ## Troubleshooting
 

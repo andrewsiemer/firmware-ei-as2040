@@ -5,7 +5,7 @@ set(EI_SDK_FOLDER edge-impulse-sdk)
 
 include(pico_sdk_import.cmake)
 
-project(ei_rp2040_firmware C CXX ASM)
+project(ei_as2040_firmware C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 11)
 
@@ -31,13 +31,13 @@ IF(DEFINE_DEBUG)
     MESSAGE("Build type is " ${CMAKE_BUILD_TYPE})
 ENDIF(DEFINE_DEBUG)
 
-add_executable(ei_rp2040_firmware
+add_executable(ei_as2040_firmware
     src/main.cpp
 )
 
 include(${MODEL_FOLDER}/utils/cmake/utils.cmake)
 
-target_link_libraries(ei_rp2040_firmware
+target_link_libraries(ei_as2040_firmware
                       pico_stdlib
                       pico_unique_id
                       hardware_gpio
@@ -47,17 +47,17 @@ target_link_libraries(ei_rp2040_firmware
                       hardware_flash)
 
 # enable usb output, disable uart output
-pico_enable_stdio_usb(ei_rp2040_firmware 1)
-pico_enable_stdio_uart(ei_rp2040_firmware 0)
+pico_enable_stdio_usb(ei_as2040_firmware 1)
+pico_enable_stdio_uart(ei_as2040_firmware 0)
 
-target_include_directories(ei_rp2040_firmware PRIVATE
+target_include_directories(ei_as2040_firmware PRIVATE
     ${MODEL_FOLDER}
     ${MODEL_FOLDER}/classifer
     ${MODEL_FOLDER}/tflite-model
     ${MODEL_FOLDER}/model-parameters
 )
 
-target_include_directories(ei_rp2040_firmware PRIVATE
+target_include_directories(ei_as2040_firmware PRIVATE
     ${EI_SDK_FOLDER}
     ${EI_SDK_FOLDER}/third_party/ruy
     ${EI_SDK_FOLDER}/third_party/gemmlowp
@@ -118,6 +118,6 @@ list(APPEND SOURCE_FILES ${FIRMWARE_SDK_FILES})
 list(APPEND SOURCE_FILES ${THIRDPARTY_FILES})
 
 # add all sources to the project
-target_sources(ei_rp2040_firmware PRIVATE ${SOURCE_FILES})
+target_sources(ei_as2040_firmware PRIVATE ${SOURCE_FILES})
 
-pico_add_extra_outputs(ei_rp2040_firmware)
+pico_add_extra_outputs(ei_as2040_firmware)
