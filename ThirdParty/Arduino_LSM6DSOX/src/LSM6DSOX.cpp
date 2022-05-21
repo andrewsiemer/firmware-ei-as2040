@@ -20,10 +20,12 @@
 #include "LSM6DSOX.h"
 
 #define LSM6DSOX_ADDRESS            0x6A
+#define LSM6DSR_ADDRESS            0x6B
 
 #define LSM6DSOX_WHO_AM_I_REG       0X0F
 
 #define  LSM6DS3_WHO_AM_I           0x6A    //Grove LSM6DS3 module
+#define  LSM6DSR_WHO_AM_I            0x6B
 #define  LSM6DOX_WHO_AM_I           0x6C
 
 #define LSM6DSOX_CTRL1_XL           0X10
@@ -73,6 +75,9 @@ int LSM6DSOXClass::begin()
   }
   else if (readRegister(LSM6DSOX_WHO_AM_I_REG) == LSM6DS3_WHO_AM_I) {
     type = 2;
+  }
+  else if (readRegister(LSM6DSOX_WHO_AM_I_REG) == LSM6DSR_WHO_AM_I) {
+    type = 3;
   }
   else {
     end();
@@ -236,4 +241,4 @@ int LSM6DSOXClass::writeRegister(uint8_t address, uint8_t value)
   return 1;
 }
 
-LSM6DSOXClass IMU(Wire, LSM6DSOX_ADDRESS);
+LSM6DSOXClass IMU(Wire1, LSM6DSR_ADDRESS);

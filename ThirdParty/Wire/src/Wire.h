@@ -49,11 +49,11 @@ constexpr uint32_t __bitset(const int (&a)[N], size_t i = 0U) {
 #endif
 
 // Wire
-#define SDA  8
-#define SCL  9
+#define SDA  24
+#define SCL  25
 
-#define PIN_WIRE1_SDA  (6u)
-#define PIN_WIRE1_SCL  (7u)
+#define PIN_WIRE1_SDA  (22u)
+#define PIN_WIRE1_SCL  (23u)
 
 class TwoWire {
 public:

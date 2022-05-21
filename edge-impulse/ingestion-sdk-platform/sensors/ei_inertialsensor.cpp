@@ -38,6 +38,8 @@ static float imu_data[INERTIAL_AXIS_SAMPLED];
 bool ei_inertial_sensor_init(void)
 {
     uint8_t acc_type = IMU.begin();
+    ei_printf("%i HERE\n", acc_type);
+    
     if (!acc_type) {
         return false;
     }
@@ -46,6 +48,9 @@ bool ei_inertial_sensor_init(void)
     }
     else if (acc_type == 2) {
         DEBUG_PRINT("Using LSM6DS3\n");        
+    }
+    else if (acc_type == 3) {
+        DEBUG_PRINT("Using LSM6DSR\n");        
     }
 
     ei_add_sensor_to_fusion_list(inertial_sensor);
