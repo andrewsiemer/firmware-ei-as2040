@@ -6,7 +6,7 @@ Edge Impulse enables developers to create the next generation of intelligent dev
 ### Hardware
 
 - AS2040 with USB-C cable
-- (Optional) External I2C sensor boards can be daisy chained using the StemmaQT/Qwiic system (I2C1).
+- (Optional) External [I2C sensor boards](https://www.adafruit.com/?q=sensor+stemma+qt+&sort=BestMatch) can be daisy chained using the StemmaQT/Qwiic system (I2C1)
 
 ### Tools
 The below instructions assume you are using macOS. Alternative instructions for those using Debian-based Linux distribution or Microsoft Windows are provided in [Getting started with Pico guide](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf) (Sections 2.1 and 9.2).
